@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Button } from '@material-ui/core'
 
 class WithMessage extends React.Component {
   componentDidMount() {}
@@ -19,7 +20,7 @@ function OneRenderProps() {
     <WithMessage>
       {({ logMessage }) => {
         return (
-          <button onClick={() => logMessage("hello!")}>Log message</button>
+          <Button color="primary" variant="contained" onClick={() => logMessage("hello!")}>Log message</Button>
         );
       }}
     </WithMessage>
