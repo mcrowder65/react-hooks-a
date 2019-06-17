@@ -1,3 +1,3 @@
-This is a presentation given at the React DC meetup group.
+This is a presentation given at work.
 
 This is just a create-react-app project.
