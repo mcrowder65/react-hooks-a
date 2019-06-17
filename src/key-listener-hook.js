@@ -1,17 +1,21 @@
 import React from "react";
 
-function KeyListenerHook() {
-  const [currentKey, setCurrentKey] = React.useState("");
-  const handleKey = ({ key }) => {
-    setCurrentKey(key);
+class KeyListenerHook extends React.Component {
+  state = {
+    currentKey: "",
   };
-  React.useEffect(() => {
-    window.addEventListener("keydown", handleKey);
-    return () => {
-      window.removeEventListener("keydown", handleKey);
-    };
-  }, []);
-  return <div>Current key:{currentKey}</div>;
+  handleKey = ({ key }) => {
+    this.setState({ currentKey: key });
+  };
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.handleKey);
+  }
+  componentDidMount() {
+    window.addEventListener("keydown", this.handleKey);
+  }
+  render() {
+    return <div>Current key:{this.state.currentKey}</div>;
+  }
 }
 
 function ParentComponent() {
