@@ -1,53 +1,52 @@
+
 import React from "react";
 import PropTypes from "prop-types";
 const LoadingContext = React.createContext();
 
-export function useLoader() {
-  const [loadCount, setLoadCount] = React.useState(0);
-  const makeApiCall = async (yourApiCall) => {
+class ReusableComponent extends React.Component {
+  static propTypes = {
+    children: PropTypes.func.isRequired,
+  };
+  state = {
+    loadCount: 0,
+  };
+  makeApiCall = async (yourApiCall) => {
     try {
-      setLoadCount((state) => state + 1);
+      this.setState((state) => ({ loadCount: state.loadCount + 1 }));
       await yourApiCall();
     } finally {
-      setLoadCount((state) => state - 1);
+      this.setState((state) => ({ loadCount: state.loadCount - 1 }));
     }
   };
-  return {
-    makeApiCall,
-    isLoading: loadCount > 0,
-  };
+  render() {
+    return this.props.children({
+      makeApiCall: this.makeApiCall,
+      isLoading: this.state.loadCount > 0,
+    });
+  }
 }
-function ReusableComponent(props) {
-  const [loadCount, setLoadCount] = React.useState(0);
-  const makeApiCall = async (yourApiCall) => {
-    try {
-      setLoadCount((state) => state + 1);
-      await yourApiCall();
-    } finally {
-      setLoadCount((state) => state - 1);
-    }
+class LoadingProvider extends React.Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
   };
-  return props.children({
-    makeApiCall,
-    isLoading: loadCount > 0,
-  });
-}
-ReusableComponent.propTypes = {
-  children: PropTypes.func.isRequired,
-};
-
-function LoadingProvider(props) {
-  const { makeApiCall, isLoading } = useLoader();
-  return (
-    <LoadingContext.Provider
-      value={{
-        makeApiCall,
-        isLoading,
-      }}
-    >
-      {props.children}
-    </LoadingContext.Provider>
-  );
+  render() {
+    return (
+      <ReusableComponent>
+        {({ makeApiCall, isLoading }) => {
+          return (
+            <LoadingContext.Provider
+              value={{
+                makeApiCall,
+                isLoading,
+              }}
+            >
+              {this.props.children}
+            </LoadingContext.Provider>
+          );
+        }}
+      </ReusableComponent>
+    );
+  }
 }
 LoadingProvider.propTypes = {
   children: PropTypes.node.isRequired,
@@ -67,10 +66,6 @@ export const WithGlobalLoader = (props) => {
 
 WithGlobalLoader.propTypes = {
   children: PropTypes.func.isRequired,
-};
-export const useGlobalLoader = () => {
-  const { isLoading, makeApiCall } = React.useContext(LoadingContext);
-  return { isLoading, makeApiCall };
 };
 export const withGlobalLoader = (YourComponent) => {
   return function(props) {
