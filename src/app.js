@@ -6,7 +6,7 @@ import { Grid } from "@material-ui/core";
 import OneHoc from "./one-hoc";
 import { SnackbarProvider } from "./snackbar";
 import OneRenderProps from "./one-renderprops";
-import LoadingProvider from "./loading";
+import LoadingProvider, { WithGlobalLoader } from "./loading";
 import TwoHoc from "./two-hoc";
 import TwoRenderProps from "./two-renderprops";
 import UseReducer from "./use-reducer";
@@ -53,6 +53,15 @@ class App extends Component {
     return (
       <SnackbarProvider>
         <LoadingProvider>
+          <WithGlobalLoader>
+            {({ isLoading }) => {
+              return isLoading ? (
+                <div>
+                  I am a separate component that knows about the global loader
+                </div>
+              ) : null;
+            }}
+          </WithGlobalLoader>
           <BrowserRouter history={browserHistory}>
             <div>
               <Route
