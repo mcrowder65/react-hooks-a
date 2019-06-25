@@ -3,33 +3,51 @@ import "babel-polyfill";
 import { Router as BrowserRouter, withRouter } from "react-router-dom";
 import { Route } from "react-router";
 import { createBrowserHistory } from "history";
-import DisplayNetworkStatus from "./network-status";
 import IncompleteCompThatUsesHooks from "./basic-hook/incomplete";
 import { Drawer, ListItem, ListItemText, List } from "@material-ui/core";
 import AboutMe from "./about-me";
 
 const browserHistory = createBrowserHistory();
-const routes = {
-  "about-me": "About me",
-  "basic-hook": "Basic Hook",
-};
+const routes = [
+  { path: "/about-me", humanReadableName: "About me", component: AboutMe },
+  {
+    path: "/basic-hook",
+    humanReadableName: "Basic Hook",
+    component: IncompleteCompThatUsesHooks,
+  },
+];
 const RouterWithoutHOC = (props) => {
+  console.log(props);
   return (
     <div>
-      <Route exact path="/about-me" component={AboutMe} />
-      <Route exact path="/" component={DisplayNetworkStatus} />
-      <Route path="/basic-hook" component={IncompleteCompThatUsesHooks} />
+      {routes.map((route) => {
+        return (
+          <Route
+            path={route.path}
+            component={route.component}
+            key={route.path}
+          />
+        );
+      })}
       <Drawer variant="permanent" anchor="right">
         <List>
-          {Object.entries(routes).map(([routeName, humanReadableName]) => (
+          {routes.map((route, index) => (
             <ListItem
+              style={{
+                backgroundColor:
+                  props.location.pathname === route.path
+                    ? "lightgray"
+                    : undefined,
+              }}
               button
-              key={routeName}
+              key={route.path}
               onClick={() => {
-                props.history.push(routeName);
+                props.history.push(route.path);
               }}
             >
-              <ListItemText primary={humanReadableName} />
+              <ListItemText
+                primary={`#${index + 1} ${route.humanReadableName}`}
+              />
             </ListItem>
           ))}
         </List>
