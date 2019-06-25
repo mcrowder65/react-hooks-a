@@ -6,6 +6,8 @@ import { createBrowserHistory } from "history";
 import IncompleteCompThatUsesHooks from "./basic-hook/incomplete";
 import { Drawer, ListItem, ListItemText, List } from "@material-ui/core";
 import AboutMe from "./about-me";
+import NetworkStatusHOC from "./network-status/hoc";
+import NetworkStatusRenderProps from "./network-status/render-props";
 
 const browserHistory = createBrowserHistory();
 const routes = [
@@ -15,9 +17,18 @@ const routes = [
     humanReadableName: "Basic Hook",
     component: IncompleteCompThatUsesHooks,
   },
+  {
+    path: "/network-status-hoc",
+    humanReadableName: "Higher Order Component",
+    component: NetworkStatusHOC,
+  },
+  {
+    path: "/network-status-render-props",
+    humanReadableName: "Render Props",
+    component: NetworkStatusRenderProps,
+  },
 ];
 const RouterWithoutHOC = (props) => {
-  console.log(props);
   return (
     <div>
       {routes.map((route) => {
@@ -57,7 +68,6 @@ const RouterWithoutHOC = (props) => {
 };
 const Router = withRouter(RouterWithoutHOC);
 function App() {
-  // const [route, setRoute] = useLocalStorageSetState("/", "current-route");
   return (
     <BrowserRouter history={browserHistory}>
       <div>

@@ -24,4 +24,14 @@ class RenderProps extends React.Component {
   }
 }
 
-export default RenderProps;
+const NetworkStatusRenderProps = () => {
+  return (
+    <RenderProps>
+      {({ networkStatus }) => {
+        return <div>Network status: {networkStatus}</div>;
+      }}
+    </RenderProps>
+  );
+};
+
+export default NetworkStatusRenderProps;

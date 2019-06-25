@@ -30,3 +30,8 @@ export const withNetworkStatus = (YourComponent) => {
     }
   };
 };
+
+const NetworkStatusHOC = (props) => {
+  return <div>Network status: {props.networkStatus}</div>;
+};
+export default withNetworkStatus(NetworkStatusHOC);
