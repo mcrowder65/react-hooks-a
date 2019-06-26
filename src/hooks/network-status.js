@@ -7,7 +7,7 @@ export const useNetworkStatus = () => {
 };
 
 const NetworkStatusHooks = () => {
-  const networkStatus = useNetworkStatus();
+  const { networkStatus } = useNetworkStatus();
   return (
     <Container>
       <Text>Network status: {networkStatus}</Text>
