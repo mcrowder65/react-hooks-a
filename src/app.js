@@ -25,6 +25,7 @@ import Todo from "./todo";
 import HocsInAppian from "./hoc/hocs-in-appian";
 import ApiCallHoc from "./hoc/api-call";
 import FunctionComposition from "./hoc/function-composition";
+import BringItAllTogetherHOC from "./hoc/bring-it-together";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -60,7 +61,7 @@ const routes = [
       {
         path: "/bringing-it-all-together",
         humanReadableName: "Bringing it all together",
-        component: Todo,
+        component: BringItAllTogetherHOC,
       },
     ],
   },
