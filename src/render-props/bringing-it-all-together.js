@@ -3,6 +3,8 @@ import { NetworkStatus } from "./network-status";
 import { ApiCall } from "./api-call";
 import { sleep } from "mooks";
 import { Button } from "../reusable/button";
+import { Container } from "../reusable/container";
+import { Text } from "../reusable/text";
 
 const BringingItAllTogetherRenderProps = () => {
   return (
@@ -16,12 +18,12 @@ const BringingItAllTogetherRenderProps = () => {
                   await sleep(1000);
                 });
               return (
-                <>
-                  {isLoading && "loading"}
+                <Container>
+                  {isLoading && <Text>loading</Text>}
                   {networkStatus === "online" && (
                     <Button onClick={apiCall}>Make api call!</Button>
                   )}
-                </>
+                </Container>
               );
             }}
           </ApiCall>

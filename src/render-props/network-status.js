@@ -1,4 +1,6 @@
 import React from "react";
+import { Container } from "../reusable/container";
+import { Text } from "../reusable/text";
 
 export class NetworkStatus extends React.Component {
   state = {
@@ -28,7 +30,11 @@ const NetworkStatusRenderProps = () => {
   return (
     <NetworkStatus>
       {({ networkStatus }) => {
-        return <div>Network status: {networkStatus}</div>;
+        return (
+          <Container>
+            <Text>Network status: {networkStatus}</Text>
+          </Container>
+        );
       }}
     </NetworkStatus>
   );

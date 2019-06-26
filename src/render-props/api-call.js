@@ -1,6 +1,8 @@
 import React from "react";
 import { sleep } from "mooks";
 import { Button } from "../reusable/button";
+import { Container } from "../reusable/container";
+import { Text } from "../reusable/text";
 export class ApiCall extends React.Component {
   state = {
     isLoading: false,
@@ -30,8 +32,8 @@ const RenderPropsApiCall = () => {
           await sleep(1000);
         };
         return (
-          <div>
-            {props.isLoading ? "loading..." : null}
+          <Container>
+            {props.isLoading ? <Text>loading...</Text> : null}
             <Button
               color="primary"
               variant="contained"
@@ -39,7 +41,7 @@ const RenderPropsApiCall = () => {
             >
               Make Api Call!
             </Button>
-          </div>
+          </Container>
         );
       }}
     />
