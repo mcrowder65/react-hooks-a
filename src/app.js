@@ -4,6 +4,7 @@ import { Router as BrowserRouter, withRouter } from "react-router-dom";
 import { Route } from "react-router";
 import { createBrowserHistory } from "history";
 import IncompleteCompThatUsesHooks from "./basic-hook/incomplete";
+import AgendaAndGoals from "./agenda-and-goals";
 import {
   Drawer,
   ListItem,
@@ -12,7 +13,12 @@ import {
   Divider,
   Grid,
   Collapse,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
 } from "@material-ui/core";
+import Menu from "@material-ui/icons/Menu";
 import AboutMe from "./about-me";
 import Todo from "./todo";
 
@@ -22,7 +28,7 @@ const routes = [
   {
     path: "/agenda-and-goals",
     humanReadableName: "Agenda and Goals",
-    component: Todo,
+    component: AgendaAndGoals,
   },
   {
     path: "/hocs",
@@ -136,6 +142,7 @@ const routes = [
   },
 ];
 const RouterWithoutHOC = (props) => {
+  const [isDrawerOpen, setDrawerOpen] = React.useState(true);
   React.useEffect(() => {
     if (props.location.pathname === "/") {
       props.history.push("/about-me");
@@ -143,6 +150,25 @@ const RouterWithoutHOC = (props) => {
   }, [props.location.pathname]);
   return (
     <div>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography variant="h6" noWrap>
+            {
+              routes.find((route) =>
+                props.location.pathname.includes(route.path),
+              ).humanReadableName
+            }
+          </Typography>
+          <IconButton
+            color="inherit"
+            aria-label="Open drawer"
+            edge="end"
+            onClick={() => setDrawerOpen((state) => !state)}
+          >
+            <Menu />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
       <main>
         {routes.map((route, index) => {
           return (
@@ -162,7 +188,8 @@ const RouterWithoutHOC = (props) => {
           );
         })}
       </main>
-      <Drawer variant="permanent" anchor="right">
+      <div />
+      <Drawer variant="persistent" open={isDrawerOpen} anchor="right">
         <List>
           {routes.map((route, index) => (
             <React.Fragment key={`drawer-${route.path}-${index}`}>
