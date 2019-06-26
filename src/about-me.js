@@ -5,7 +5,7 @@ const AboutMe = () => {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
       }}
     >
