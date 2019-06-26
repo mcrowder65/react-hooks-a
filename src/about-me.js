@@ -1,5 +1,8 @@
 import React from "react";
 
+const Li = ({ children }) => {
+  return <li>{children}</li>;
+};
 const AboutMe = () => {
   return (
     <div
@@ -11,20 +14,20 @@ const AboutMe = () => {
     >
       <h1 style={{ fontWeight: "normal" }}>
         <ul>
-          <li>I am Matt Crowder</li>
-          <li>mcrowder65 </li>
-          <li>Wife and dog</li>
-          <li>NoVaJS co organizer</li>
-          <li>Aspiring public speaker</li>
-          <li>
+          <Li>I am Matt Crowder</Li>
+          <Li>mcrowder65 </Li>
+          <Li>Wife and dog</Li>
+          <Li>NoVaJS co organizer</Li>
+          <Li>Aspiring public speaker</Li>
+          <Li>
             Things I enjoy:
             <ul>
-              <li>lifting</li>
-              <li>running</li>
-              <li>programming</li>
-              <li>talking</li>
+              <Li>lifting</Li>
+              <Li>running</Li>
+              <Li>programming</Li>
+              <Li>talking</Li>
             </ul>
-          </li>
+          </Li>
         </ul>
       </h1>
     </div>

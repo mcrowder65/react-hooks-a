@@ -1,6 +1,6 @@
 import React from "react";
 import { sleep } from "mooks";
-import { Button } from "@material-ui/core";
+import { Button } from "../reusable/button";
 export const useApiCall = (yourApiCall) => {
   return { isLoading: false };
 };
@@ -12,9 +12,7 @@ const ApiCallHooks = () => {
   return (
     <div>
       {isLoading && "loading..."}
-      <Button color="primary" variant="contained" onClick={makeApiCall}>
-        Make Api Call!
-      </Button>
+      <Button onClick={makeApiCall}>Make Api Call!</Button>
     </div>
   );
 };

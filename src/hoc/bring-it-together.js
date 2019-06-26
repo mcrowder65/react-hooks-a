@@ -3,6 +3,7 @@ import { sleep } from "mooks";
 import { compose } from "../utils";
 import { withApiCall } from "./api-call";
 import { withNetworkStatus } from "./network-status";
+import { Button } from "../reusable/button";
 
 const BringItAllTogetherHOC = (props) => {
   const makeApiCall = () => {
@@ -14,7 +15,7 @@ const BringItAllTogetherHOC = (props) => {
     <div>
       {props.isLoading ? "loading..." : null}
       {props.networkStatus === "online" && (
-        <button onClick={makeApiCall}>make api call</button>
+        <Button onClick={makeApiCall}>make api call</Button>
       )}
     </div>
   );

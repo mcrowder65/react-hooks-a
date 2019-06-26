@@ -1,5 +1,6 @@
 import React from "react";
 import { sleep } from "mooks";
+import { Button } from "../reusable/button";
 
 export const withApiCall = (YourComponent) => {
   return class extends React.Component {
@@ -34,7 +35,7 @@ const ApiCallHoc = (props) => {
   return (
     <div>
       {props.isLoading ? "loading..." : null}
-      <button onClick={() => props.makeApiCall(apiCall)}>Make Api Call!</button>
+      <Button onClick={() => props.makeApiCall(apiCall)}>Make Api Call!</Button>
     </div>
   );
 };

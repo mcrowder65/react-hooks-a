@@ -1,8 +1,6 @@
 import React from "react";
-import { Button as MuiButton } from "@material-ui/core";
-const Button = (props) => {
-  return <MuiButton {...props} variant="contained" color="primary" />;
-};
+import { Button } from "../reusable/button";
+
 const UseStateExample = () => {
   const [count, setCount] = React.useState(0);
 

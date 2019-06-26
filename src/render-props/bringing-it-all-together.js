@@ -2,7 +2,7 @@ import React from "react";
 import { NetworkStatus } from "./network-status";
 import { ApiCall } from "./api-call";
 import { sleep } from "mooks";
-import { Button } from "@material-ui/core";
+import { Button } from "../reusable/button";
 
 const BringingItAllTogetherRenderProps = () => {
   return (
@@ -19,13 +19,7 @@ const BringingItAllTogetherRenderProps = () => {
                 <>
                   {isLoading && "loading"}
                   {networkStatus === "online" && (
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      onClick={apiCall}
-                    >
-                      Make api call!
-                    </Button>
+                    <Button onClick={apiCall}>Make api call!</Button>
                   )}
                 </>
               );
