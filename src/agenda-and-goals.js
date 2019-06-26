@@ -1,32 +1,33 @@
 import React from "react";
 import compose from "lodash.compose";
 import { withStyles } from "@material-ui/core/styles";
+import { Li } from "./reusable/li";
+import { Container } from "./reusable/container";
 
 function AgendaAndGoals() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-      }}
-    >
+    <Container>
       <h1 style={{ fontWeight: "normal" }}>
         <ul>
-          <li>Agenda</li>
+          <Li>Agenda</Li>
           <ul>
-            <li>
-              Building reusable components with HOC, Render Props, then Hooks!
-            </li>
+            <Li>
+              Building reusable components
+              <ul>
+                <Li>HOC</Li>
+                <Li>Render Props!</Li>
+                <Li>Hooks!</Li>
+              </ul>
+            </Li>
           </ul>
-          <li>Goals</li>
+          <Li>Goals</Li>
           <ul>
-            <li>Inspired to write React Hooks!</li>
-            <li>We will migrate to React 16.8</li>
+            <Li>Inspired to write React Hooks!</Li>
+            <Li>We will migrate to React 16.8</Li>
           </ul>
         </ul>
       </h1>
-    </div>
+    </Container>
   );
 }
 

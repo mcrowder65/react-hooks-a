@@ -4,6 +4,8 @@ import { compose } from "../utils";
 import { withApiCall } from "./api-call";
 import { withNetworkStatus } from "./network-status";
 import { Button } from "../reusable/button";
+import { BigText } from "../reusable/big-text";
+import { Container } from "../reusable/container";
 
 const BringItAllTogetherHOC = (props) => {
   const makeApiCall = () => {
@@ -12,12 +14,12 @@ const BringItAllTogetherHOC = (props) => {
     });
   };
   return (
-    <div>
-      {props.isLoading ? "loading..." : null}
+    <Container>
+      {props.isLoading ? <BigText>loading...</BigText> : null}
       {props.networkStatus === "online" && (
         <Button onClick={makeApiCall}>make api call</Button>
       )}
-    </div>
+    </Container>
   );
 };
 

@@ -1,5 +1,7 @@
 import React from "react";
 import { compose } from "../utils";
+import { Container } from "../reusable/container";
+import { BigText } from "../reusable/big-text";
 
 const add10 = (additionalNumber) => (num) => num + additionalNumber + 10;
 
@@ -10,9 +12,9 @@ const add30 = compose(
 );
 const FunctionComposition = () => {
   return (
-    <div>
-      <h1>{add10(0)(3)}</h1>
-    </div>
+    <Container>
+      <BigText>{add10(0)(3)}</BigText>
+    </Container>
   );
 };
 

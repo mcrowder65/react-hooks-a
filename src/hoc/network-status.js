@@ -1,4 +1,6 @@
 import React from "react";
+import { Container } from "../reusable/container";
+import { BigText } from "../reusable/big-text";
 
 export const withNetworkStatus = (YourComponent) => {
   return class extends React.Component {
@@ -33,9 +35,9 @@ export const withNetworkStatus = (YourComponent) => {
 
 const NetworkStatusHOC = (props) => {
   return (
-    <h1 style={{ fontWeight: "normal" }}>
-      Network status: {props.networkStatus}
-    </h1>
+    <Container>
+      <BigText>Network status: {props.networkStatus}</BigText>
+    </Container>
   );
 };
 export default withNetworkStatus(NetworkStatusHOC);

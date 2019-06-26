@@ -1,6 +1,8 @@
 import React from "react";
 import { sleep } from "mooks";
 import { Button } from "../reusable/button";
+import { BigText } from "../reusable/big-text";
+import { Container } from "../reusable/container";
 
 export const withApiCall = (YourComponent) => {
   return class extends React.Component {
@@ -33,10 +35,10 @@ const ApiCallHoc = (props) => {
     await sleep(1000);
   };
   return (
-    <div>
-      {props.isLoading ? "loading..." : null}
+    <Container>
+      {props.isLoading ? <BigText>loading...</BigText> : null}
       <Button onClick={() => props.makeApiCall(apiCall)}>Make Api Call!</Button>
-    </div>
+    </Container>
   );
 };
 

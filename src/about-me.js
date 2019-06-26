@@ -1,17 +1,10 @@
 import React from "react";
+import { Li } from "./reusable/li";
+import { Container } from "./reusable/container";
 
-const Li = ({ children }) => {
-  return <li>{children}</li>;
-};
 const AboutMe = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-      }}
-    >
+    <Container>
       <h1 style={{ fontWeight: "normal" }}>
         <ul>
           <Li>I am Matt Crowder</Li>
@@ -30,7 +23,7 @@ const AboutMe = () => {
           </Li>
         </ul>
       </h1>
-    </div>
+    </Container>
   );
 };
 

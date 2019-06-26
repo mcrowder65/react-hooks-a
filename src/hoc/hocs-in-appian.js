@@ -1,24 +1,20 @@
 import React from "react";
+import { Container } from "../reusable/container";
+import { Li } from "../reusable/li";
+import { Text } from "../reusable/text";
 
 const HocsInAppian = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        marginTop: 10,
-      }}
-    >
+    <Container>
       <h1 style={{ fontWeight: "normal" }}>
         <ul>
-          <li>SkinnableComponent</li>
-          <li>PureComponent</li>
-          <li>InteractiveComponent</li>
+          <Li>SkinnableComponent</Li>
+          <Li>PureComponent</Li>
+          <Li>InteractiveComponent</Li>
         </ul>
-        2/3 of these components are written incorrectly 🤔
+        <Text>2/3 of these components are written incorrectly 🤔</Text>
       </h1>
-    </div>
+    </Container>
   );
 };
 
