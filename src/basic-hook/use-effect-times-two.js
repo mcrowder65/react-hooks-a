@@ -1,6 +1,9 @@
 import React from "react";
 import * as utils from "../utils";
 import { Button } from "../reusable/button";
+import { BigText } from "../reusable/big-text";
+import { Text } from "../reusable/text";
+import { Container } from "../reusable/container";
 
 const UseEffectExampleTimesTwo = () => {
   const [count, setCount] = React.useState();
@@ -18,16 +21,20 @@ const UseEffectExampleTimesTwo = () => {
     }
   }, [count]);
   return (
-    <div>
+    <Container flexDirection="column">
       {count !== undefined && (
         <>
-          <div>Even number occurrences: {evenNumberOccurrences}</div>
-          <Button onClick={() => setCount(count - 1)}>-1</Button>
-          {count}
-          <Button onClick={() => setCount(count + 1)}>+1</Button>
+          <div>
+            <Text>Even number occurrences: {evenNumberOccurrences}</Text>
+          </div>
+          <div>
+            <Button onClick={() => setCount(count - 1)}>-1</Button>
+            <BigText>{count}</BigText>
+            <Button onClick={() => setCount(count + 1)}>+1</Button>
+          </div>
         </>
       )}
-    </div>
+    </Container>
   );
 };
 

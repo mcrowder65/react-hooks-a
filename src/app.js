@@ -144,17 +144,17 @@ const routes = [
       },
     ],
   },
-  {
-    path: "/time-permitting",
-    humanReadableName: "Time permitting extras!",
-    subcomponents: [
-      {
-        path: "/use-memo",
-        humanReadableName: "useMemo",
-        component: Todo,
-      },
-    ],
-  },
+  // {
+  //   path: "/time-permitting",
+  //   humanReadableName: "Time permitting extras!",
+  //   subcomponents: [
+  //     {
+  //       path: "/use-memo",
+  //       humanReadableName: "useMemo",
+  //       component: Todo,
+  //     },
+  //   ],
+  // },
   {
     path: "/conclusion",
     humanReadableName: "Conclusion",

@@ -1,6 +1,8 @@
 import React from "react";
 import * as utils from "../utils";
 import { Button } from "../reusable/button";
+import { Container } from "../reusable/container";
+import { BigText } from "../reusable/big-text";
 
 const UseEffectExample = () => {
   const [count, setCount] = React.useState();
@@ -11,15 +13,17 @@ const UseEffectExample = () => {
     fetchCount();
   }, []);
   return (
-    <div>
+    <Container>
       {count !== undefined && (
         <>
           <Button onClick={() => setCount(count - 1)}>-1</Button>
-          {count}
+          <div style={{ margin: 30 }}>
+            <BigText>{count}</BigText>
+          </div>
           <Button onClick={() => setCount(count + 1)}>+1</Button>
         </>
       )}
-    </div>
+    </Container>
   );
 };
 

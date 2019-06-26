@@ -1,6 +1,8 @@
 import React from "react";
 import { sleep } from "mooks";
 import { Button } from "../reusable/button";
+import { Container } from "../reusable/container";
+import { Text } from "../reusable/text";
 export const useApiCall = (yourApiCall) => {
   return { isLoading: false };
 };
@@ -10,10 +12,10 @@ const ApiCallHooks = () => {
     await sleep(500);
   });
   return (
-    <div>
-      {isLoading && "loading..."}
+    <Container>
+      {isLoading && <Text>"loading..."</Text>}
       <Button onClick={makeApiCall}>Make Api Call!</Button>
-    </div>
+    </Container>
   );
 };
 

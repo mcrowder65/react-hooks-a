@@ -1,4 +1,6 @@
 import React from "react";
+import { Container } from "../reusable/container";
+import { BigText } from "../reusable/big-text";
 
 const Destructuring = () => {
   // const obj = { value: "oranges", name: "matt" };
@@ -7,9 +9,11 @@ const Destructuring = () => {
   const [value, name] = ["oranges", "matt"];
   // const { value, name } = obj;
   return (
-    <div>
-      {value} {name}
-    </div>
+    <Container>
+      <BigText>
+        {value} {name}
+      </BigText>
+    </Container>
   );
 };
 
