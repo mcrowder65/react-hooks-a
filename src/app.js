@@ -35,6 +35,7 @@ import UseEffectExampleTimesTwo from "./basic-hook/use-effect-times-two";
 import Destructuring from "./basic-hook/destructuring";
 import NetworkStatusHooks from "./hooks/network-status";
 import ApiCallHooks from "./hooks/api-call";
+import BringingItAllTogetherHooks from "./hooks/bringing-it-all-together";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -139,12 +140,7 @@ const routes = [
       {
         path: "/bringing-it-all-together",
         humanReadableName: "Bringing it all together",
-        component: Todo,
-      },
-      {
-        path: "/back-to-original-use-effect",
-        humanReadableName: "Back to original use effect",
-        component: Todo,
+        component: BringingItAllTogetherHooks,
       },
     ],
   },
