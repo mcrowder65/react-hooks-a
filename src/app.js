@@ -5,6 +5,7 @@ import { Route } from "react-router";
 import { createBrowserHistory } from "history";
 import { useLocalStorageSetState } from "mooks";
 import AgendaAndGoals from "./agenda-and-goals";
+import NetworkStatusHoc from "./hoc/network-status";
 import {
   Drawer,
   ListItem,
@@ -22,7 +23,8 @@ import Menu from "@material-ui/icons/Menu";
 import AboutMe from "./about-me";
 import Todo from "./todo";
 import HocsInAppian from "./hoc/hocs-in-appian";
-
+import ApiCallHoc from "./hoc/api-call";
+import FunctionComposition from "./hoc/function-composition";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -43,17 +45,17 @@ const routes = [
       {
         path: "/network-status",
         humanReadableName: "Network Status",
-        component: Todo,
+        component: NetworkStatusHoc,
       },
       {
         path: "/api-call",
         humanReadableName: "Api Call",
-        component: Todo,
+        component: ApiCallHoc,
       },
       {
         path: "/function-composition",
         humanReadableName: "Function Composition",
-        component: Todo,
+        component: FunctionComposition,
       },
       {
         path: "/bringing-it-all-together",
@@ -107,6 +109,7 @@ const routes = [
   {
     path: "/rewrite-in-hooks",
     humanReadableName: "Writing it all in hooks",
+    component: Todo,
     subcomponents: [
       {
         path: "/network-status",
@@ -174,23 +177,25 @@ const RouterWithoutHOC = (props) => {
         </Toolbar>
       </AppBar>
       <main>
-        {routes.map((route, index) => {
-          return (
-            <React.Fragment key={`${route.path}-${index}`}>
-              <Route exact path={route.path} component={route.component} />
-              {(route.subcomponents || []).map((subroute, i) => {
-                return (
-                  <Route
-                    exact
-                    path={`${route.path}${subroute.path}`}
-                    component={subroute.component}
-                    key={`${route.path}-${subroute.path}-${i}`}
-                  />
-                );
-              })}
-            </React.Fragment>
-          );
-        })}
+        <div style={{ marginTop: 100 }}>
+          {routes.map((route, index) => {
+            return (
+              <React.Fragment key={`${route.path}-${index}`}>
+                <Route exact path={route.path} component={route.component} />
+                {(route.subcomponents || []).map((subroute, i) => {
+                  return (
+                    <Route
+                      exact
+                      path={`${route.path}${subroute.path}`}
+                      component={subroute.component}
+                      key={`${route.path}-${subroute.path}-${i}`}
+                    />
+                  );
+                })}
+              </React.Fragment>
+            );
+          })}
+        </div>
       </main>
       <div />
       <Drawer variant="persistent" open={isDrawerOpen} anchor="right">

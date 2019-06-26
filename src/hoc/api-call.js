@@ -1,7 +1,7 @@
 import React from "react";
-import { withNetworkStatus } from "../network-status/hoc";
+import { sleep } from "mooks";
 
-const withApiCall = (YourComponent) => {
+export const withApiCall = (YourComponent) => {
   return class extends React.Component {
     state = {
       isLoading: false,
@@ -26,3 +26,17 @@ const withApiCall = (YourComponent) => {
     }
   };
 };
+
+const ApiCallHoc = (props) => {
+  const apiCall = async () => {
+    await sleep(1000);
+  };
+  return (
+    <div>
+      {props.isLoading ? "loading..." : null}
+      <button onClick={() => props.makeApiCall(apiCall)}>Make Api Call!</button>
+    </div>
+  );
+};
+
+export default withApiCall(ApiCallHoc);

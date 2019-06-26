@@ -16,7 +16,7 @@ const HocsInAppian = () => {
           <li>PureComponent</li>
           <li>InteractiveComponent</li>
         </ul>
-        But... these components are written incorrectly 🤔
+        2/3 of these components are written incorrectly 🤔
       </h1>
     </div>
   );
