@@ -26,6 +26,7 @@ import HocsInAppian from "./hoc/hocs-in-appian";
 import ApiCallHoc from "./hoc/api-call";
 import FunctionComposition from "./hoc/function-composition";
 import BringItAllTogetherHOC from "./hoc/bring-it-together";
+import NetworkStatusRenderProps from "./render-props/network-status";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -72,7 +73,7 @@ const routes = [
       {
         path: "/network-status",
         humanReadableName: "Network Status",
-        component: Todo,
+        component: NetworkStatusRenderProps,
       },
       {
         path: "/api-call",

@@ -1,6 +1,6 @@
 import React from "react";
 
-class RenderProps extends React.Component {
+export class NetworkStatus extends React.Component {
   state = {
     networkStatus: window.navigator.onLine ? "online" : "offline",
   };
@@ -26,11 +26,11 @@ class RenderProps extends React.Component {
 
 const NetworkStatusRenderProps = () => {
   return (
-    <RenderProps>
+    <NetworkStatus>
       {({ networkStatus }) => {
         return <div>Network status: {networkStatus}</div>;
       }}
-    </RenderProps>
+    </NetworkStatus>
   );
 };
 
