@@ -129,8 +129,18 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/conclusion",
+    humanReadableName: "Conclusion",
+    component: Todo,
+  },
 ];
 const RouterWithoutHOC = (props) => {
+  React.useEffect(() => {
+    if (props.location.pathname === "/") {
+      props.history.push("/about-me");
+    }
+  }, [props.location.pathname]);
   return (
     <div>
       {routes.map((route, index) => {
