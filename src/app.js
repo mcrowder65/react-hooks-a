@@ -37,6 +37,7 @@ import NetworkStatusHooks from "./hooks/network-status";
 import ApiCallHooks from "./hooks/api-call";
 import BringingItAllTogetherHooks from "./hooks/bringing-it-all-together";
 import Conclusion from "./conclusion";
+import Children from "./render-props/children";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -80,6 +81,11 @@ const routes = [
     path: "/render-props",
     humanReadableName: "Render Props",
     subcomponents: [
+      {
+        path: "/children",
+        humanReadableName: "Children 🚸",
+        component: Children,
+      },
       {
         path: "/network-status",
         humanReadableName: "Network Status",
