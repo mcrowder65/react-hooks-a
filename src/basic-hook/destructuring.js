@@ -3,11 +3,9 @@ import { Container } from "../reusable/container";
 import { BigText } from "../reusable/big-text";
 
 const Destructuring = () => {
-  // const obj = { value: "oranges", name: "matt" };
-  // const value = obj.value;
-  // const name = obj.name;
-  const [value, name] = ["oranges", "matt"];
-  // const { value, name } = obj;
+  const obj = { value: "oranges", name: "matt" };
+  const value = obj.value;
+  const name = obj.name;
   return (
     <Container>
       <BigText>
