@@ -7,9 +7,20 @@ import { Container } from "../reusable/container";
 import { Text } from "../reusable/text";
 
 const BringingItAllTogetherHooks = () => {
+  const { isLoading, makeApiCall } = useApiCall(async () => {
+    await sleep(500);
+  });
+  const networkStatus = useNetworkStatus();
   return (
     <Container>
-      <Text>Implement me!</Text>
+      {isLoading && <Text children={"loading"} />}
+      {networkStatus === "online" && (
+        <>
+          <Button onClick={makeApiCall}>
+            <Text>Implement me?</Text>
+          </Button>
+        </>
+      )}
     </Container>
   );
 };

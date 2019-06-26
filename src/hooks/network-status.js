@@ -3,7 +3,29 @@ import { Container } from "../reusable/container";
 import { Text } from "../reusable/text";
 
 export const useNetworkStatus = () => {
-  return "implement me!";
+  const [networkStatus, setNetworkStatus] = React.useState(
+    window.navigator.onLine ? "online" : "offline",
+  );
+  const setNetworkStatusOnline = () => {
+    setNetworkStatus("online");
+  };
+  const setNetworkStatusOffline = () => {
+    setNetworkStatus("offline");
+  };
+  const componentDidMount = () => {
+    window.addEventListener("online", setNetworkStatusOnline);
+    window.addEventListener("offline", setNetworkStatusOffline);
+  };
+
+  const componentWillUnmount = () => {
+    window.removeEventListener("online", setNetworkStatusOnline);
+    window.removeEventListener("offline", setNetworkStatusOffline);
+  };
+  React.useEffect(() => {
+    componentDidMount();
+    return componentWillUnmount;
+  }, []);
+  return networkStatus;
 };
 
 const NetworkStatusHooks = () => {

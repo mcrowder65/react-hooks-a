@@ -8,7 +8,7 @@ const DisplayChildren = (props) => {
 const Children = () => {
   return (
     <Container>
-      <DisplayChildren>children</DisplayChildren>
+      <DisplayChildren children={"asdf"} />
     </Container>
   );
 };
