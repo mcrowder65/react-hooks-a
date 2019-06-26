@@ -3,6 +3,7 @@ import "babel-polyfill";
 import { Router as BrowserRouter, withRouter } from "react-router-dom";
 import { Route } from "react-router";
 import { createBrowserHistory } from "history";
+import { useLocalStorageSetState } from "mooks";
 import IncompleteCompThatUsesHooks from "./basic-hook/incomplete";
 import AgendaAndGoals from "./agenda-and-goals";
 import {
@@ -142,7 +143,10 @@ const routes = [
   },
 ];
 const RouterWithoutHOC = (props) => {
-  const [isDrawerOpen, setDrawerOpen] = React.useState(true);
+  const [isDrawerOpen, setDrawerOpen] = useLocalStorageSetState(
+    true,
+    "drawer-status",
+  );
   React.useEffect(() => {
     if (props.location.pathname === "/") {
       props.history.push("/about-me");
