@@ -1,7 +1,7 @@
 import React from "react";
 import { sleep } from "mooks";
 import { Button } from "@material-ui/core";
-class ApiCall extends React.Component {
+export class ApiCall extends React.Component {
   state = {
     isLoading: false,
   };

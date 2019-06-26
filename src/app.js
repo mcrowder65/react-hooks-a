@@ -28,6 +28,7 @@ import FunctionComposition from "./hoc/function-composition";
 import BringItAllTogetherHOC from "./hoc/bring-it-together";
 import NetworkStatusRenderProps from "./render-props/network-status";
 import RenderPropsApiCall from "./render-props/api-call";
+import BringingItAllTogetherRenderProps from "./render-props/bringing-it-all-together";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -84,7 +85,7 @@ const routes = [
       {
         path: "/bringing-it-all-together",
         humanReadableName: "Bringing it all together",
-        component: Todo,
+        component: BringingItAllTogetherRenderProps,
       },
     ],
   },
