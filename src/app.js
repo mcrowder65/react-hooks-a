@@ -34,6 +34,7 @@ import UseEffectExample from "./basic-hook/use-effect-example";
 import UseEffectExampleTimesTwo from "./basic-hook/use-effect-times-two";
 import Destructuring from "./basic-hook/destructuring";
 import NetworkStatusHooks from "./hooks/network-status";
+import ApiCallHooks from "./hooks/api-call";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -133,7 +134,7 @@ const routes = [
       {
         path: "/api-call",
         humanReadableName: "Api Call",
-        component: Todo,
+        component: ApiCallHooks,
       },
       {
         path: "/bringing-it-all-together",
