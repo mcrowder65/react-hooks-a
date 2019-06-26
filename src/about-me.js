@@ -18,6 +18,7 @@ const AboutMe = () => {
           <li>Aspiring public speaker</li>
           <li style={{ wordWrap: "wrap" }}>
             I enjoy running with my dog, lifting weights, and eating tacos with
+            <br />
             my wife.
           </li>
         </ul>
