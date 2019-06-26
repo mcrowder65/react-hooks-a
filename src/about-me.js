@@ -16,10 +16,14 @@ const AboutMe = () => {
           <li>Wife and dog</li>
           <li>NoVaJS co organizer</li>
           <li>Aspiring public speaker</li>
-          <li style={{ wordWrap: "wrap" }}>
-            I enjoy running with my dog, lifting weights, and eating tacos with
-            <br />
-            my wife.
+          <li>
+            Things I enjoy:
+            <ul>
+              <li>lifting</li>
+              <li>running</li>
+              <li>programming</li>
+              <li>talking</li>
+            </ul>
           </li>
         </ul>
       </h1>

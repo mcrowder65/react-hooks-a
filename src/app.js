@@ -143,23 +143,25 @@ const RouterWithoutHOC = (props) => {
   }, [props.location.pathname]);
   return (
     <div>
-      {routes.map((route, index) => {
-        return (
-          <React.Fragment key={`${route.path}-${index}`}>
-            <Route exact path={route.path} component={route.component} />
-            {(route.subcomponents || []).map((subroute, i) => {
-              return (
-                <Route
-                  exact
-                  path={`${route.path}${subroute.path}`}
-                  component={subroute.component}
-                  key={`${route.path}-${subroute.path}-${i}`}
-                />
-              );
-            })}
-          </React.Fragment>
-        );
-      })}
+      <main>
+        {routes.map((route, index) => {
+          return (
+            <React.Fragment key={`${route.path}-${index}`}>
+              <Route exact path={route.path} component={route.component} />
+              {(route.subcomponents || []).map((subroute, i) => {
+                return (
+                  <Route
+                    exact
+                    path={`${route.path}${subroute.path}`}
+                    component={subroute.component}
+                    key={`${route.path}-${subroute.path}-${i}`}
+                  />
+                );
+              })}
+            </React.Fragment>
+          );
+        })}
+      </main>
       <Drawer variant="permanent" anchor="right">
         <List>
           {routes.map((route, index) => (
