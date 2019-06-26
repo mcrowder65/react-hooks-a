@@ -157,16 +157,15 @@ const RouterWithoutHOC = (props) => {
       props.history.push("/about-me");
     }
   }, [props.location.pathname]);
+  const headerTitle = routes.find((route) =>
+    props.location.pathname.includes(route.path),
+  );
   return (
     <div>
       <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h6" noWrap>
-            {
-              routes.find((route) =>
-                props.location.pathname.includes(route.path),
-              ).humanReadableName
-            }
+            {headerTitle && headerTitle.humanReadableName}
           </Typography>
           <IconButton
             color="inherit"
