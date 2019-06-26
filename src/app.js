@@ -27,6 +27,7 @@ import ApiCallHoc from "./hoc/api-call";
 import FunctionComposition from "./hoc/function-composition";
 import BringItAllTogetherHOC from "./hoc/bring-it-together";
 import NetworkStatusRenderProps from "./render-props/network-status";
+import RenderPropsApiCall from "./render-props/api-call";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -78,7 +79,7 @@ const routes = [
       {
         path: "/api-call",
         humanReadableName: "Api Call",
-        component: Todo,
+        component: RenderPropsApiCall,
       },
       {
         path: "/bringing-it-all-together",
