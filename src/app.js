@@ -29,6 +29,8 @@ import BringItAllTogetherHOC from "./hoc/bring-it-together";
 import NetworkStatusRenderProps from "./render-props/network-status";
 import RenderPropsApiCall from "./render-props/api-call";
 import BringingItAllTogetherRenderProps from "./render-props/bringing-it-all-together";
+import UseStateExample from "./basic-hook/use-state";
+import UseEffectExample from "./basic-hook/use-effect-example";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -96,12 +98,12 @@ const routes = [
       {
         path: "/use-state",
         humanReadableName: "useState",
-        component: Todo,
+        component: UseStateExample,
       },
       {
         path: "/use-effect",
         humanReadableName: "useEffect",
-        component: Todo,
+        component: UseEffectExample,
       },
       {
         path: "/times-two-use-effect",
@@ -128,6 +130,11 @@ const routes = [
       {
         path: "/bringing-it-all-together",
         humanReadableName: "Bringing it all together",
+        component: Todo,
+      },
+      {
+        path: "/back-to-original-use-effect",
+        humanReadableName: "Back to original use effect",
         component: Todo,
       },
     ],
