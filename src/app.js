@@ -4,7 +4,6 @@ import { Router as BrowserRouter, withRouter } from "react-router-dom";
 import { Route } from "react-router";
 import { createBrowserHistory } from "history";
 import { useLocalStorageSetState } from "mooks";
-import IncompleteCompThatUsesHooks from "./basic-hook/incomplete";
 import AgendaAndGoals from "./agenda-and-goals";
 import {
   Drawer,
@@ -22,7 +21,7 @@ import {
 import Menu from "@material-ui/icons/Menu";
 import AboutMe from "./about-me";
 import Todo from "./todo";
-import HocsInAppian from "./hocs-in-appian";
+import HocsInAppian from "./hoc/hocs-in-appian";
 
 const browserHistory = createBrowserHistory();
 const routes = [
