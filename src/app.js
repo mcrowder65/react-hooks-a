@@ -22,6 +22,7 @@ import {
 import Menu from "@material-ui/icons/Menu";
 import AboutMe from "./about-me";
 import Todo from "./todo";
+import HocsInAppian from "./hocs-in-appian";
 
 const browserHistory = createBrowserHistory();
 const routes = [
@@ -38,7 +39,7 @@ const routes = [
       {
         path: "/example-hoc",
         humanReadableName: "HOCs in Appian!",
-        component: Todo,
+        component: HocsInAppian,
       },
       {
         path: "/network-status",
