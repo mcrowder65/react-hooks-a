@@ -33,6 +33,7 @@ import UseStateExample from "./basic-hook/use-state";
 import UseEffectExample from "./basic-hook/use-effect-example";
 import UseEffectExampleTimesTwo from "./basic-hook/use-effect-times-two";
 import Destructuring from "./basic-hook/destructuring";
+import NetworkStatusHooks from "./hooks/network-status";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -127,7 +128,7 @@ const routes = [
       {
         path: "/network-status",
         humanReadableName: "Network Status",
-        component: Todo,
+        component: NetworkStatusHooks,
       },
       {
         path: "/api-call",
