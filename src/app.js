@@ -36,6 +36,7 @@ import Destructuring from "./basic-hook/destructuring";
 import NetworkStatusHooks from "./hooks/network-status";
 import ApiCallHooks from "./hooks/api-call";
 import BringingItAllTogetherHooks from "./hooks/bringing-it-all-together";
+import Conclusion from "./conclusion";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -158,7 +159,7 @@ const routes = [
   {
     path: "/conclusion",
     humanReadableName: "Conclusion",
-    component: Todo,
+    component: Conclusion,
   },
 ];
 const RouterWithoutHOC = (props) => {
