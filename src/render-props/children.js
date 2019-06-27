@@ -8,7 +8,7 @@ const DisplayChildren = (props) => {
 const Children = () => {
   return (
     <Container>
-      <DisplayChildren>children</DisplayChildren>
+      <DisplayChildren>These are my children!</DisplayChildren>
     </Container>
   );
 };
