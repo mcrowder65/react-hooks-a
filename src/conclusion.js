@@ -11,7 +11,7 @@ const Conclusion = () => {
       <Text>Let's migrate to React 16.8</Text>
       <Button
         style={{ width: 1, height: 1 }}
-        onClick={() => setDisplay(true)}
+        onClick={() => setDisplay(!display)}
       />
       {display ? <img src={image} title="made at imgflip.com" /> : null}
     </Container>
