@@ -27,7 +27,7 @@ const BringItAllTogetherHOC = (props) => {
 const enhance = compose(
   withApiCall,
   withNetworkStatus,
-  PureComponent(),
+  PureComponent,
 );
 
 export default enhance(BringItAllTogetherHOC);
