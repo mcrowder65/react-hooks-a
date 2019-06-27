@@ -6,6 +6,7 @@ import { createBrowserHistory } from "history";
 import { useLocalStorageSetState } from "mooks";
 import AgendaAndGoals from "./agenda-and-goals";
 import NetworkStatusHoc from "./hoc/network-status";
+import Sample from "./sample";
 import {
   Drawer,
   ListItem,
@@ -155,17 +156,6 @@ const routes = [
     ],
   },
   {
-    path: "/time-permitting",
-    humanReadableName: "Time permitting extras!",
-    subcomponents: [
-      {
-        path: "/use-memo",
-        humanReadableName: "useMemo",
-        component: Todo,
-      },
-    ],
-  },
-  {
     path: "/conclusion",
     humanReadableName: "Conclusion",
     component: Conclusion,
@@ -203,6 +193,7 @@ const RouterWithoutHOC = (props) => {
       </AppBar>
       <main>
         <div style={{ marginTop: 100 }}>
+          <Route exact path="/sample" component={Sample} />
           {routes.map((route, index) => {
             return (
               <React.Fragment key={`${route.path}-${index}`}>
