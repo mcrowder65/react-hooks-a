@@ -49,6 +49,7 @@ const routes = [
   {
     path: "/hocs",
     humanReadableName: "Higher Order Components",
+    component: Todo,
     subcomponents: [
       {
         path: "/example-hoc",
@@ -80,6 +81,7 @@ const routes = [
   {
     path: "/render-props",
     humanReadableName: "Render Props",
+    component: Todo,
     subcomponents: [
       {
         path: "/children",
@@ -106,6 +108,7 @@ const routes = [
   {
     path: "/basic-hook",
     humanReadableName: "Basic Hook",
+    component: Todo,
     subcomponents: [
       {
         path: "/destructuring",
@@ -151,17 +154,17 @@ const routes = [
       },
     ],
   },
-  // {
-  //   path: "/time-permitting",
-  //   humanReadableName: "Time permitting extras!",
-  //   subcomponents: [
-  //     {
-  //       path: "/use-memo",
-  //       humanReadableName: "useMemo",
-  //       component: Todo,
-  //     },
-  //   ],
-  // },
+  {
+    path: "/time-permitting",
+    humanReadableName: "Time permitting extras!",
+    subcomponents: [
+      {
+        path: "/use-memo",
+        humanReadableName: "useMemo",
+        component: Todo,
+      },
+    ],
+  },
   {
     path: "/conclusion",
     humanReadableName: "Conclusion",

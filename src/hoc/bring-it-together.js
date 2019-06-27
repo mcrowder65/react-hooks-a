@@ -6,6 +6,7 @@ import { withNetworkStatus } from "./network-status";
 import { Button } from "../reusable/button";
 import { BigText } from "../reusable/big-text";
 import { Container } from "../reusable/container";
+import { PureComponent } from "./pure-component";
 
 const BringItAllTogetherHOC = (props) => {
   const makeApiCall = () => {
@@ -26,6 +27,7 @@ const BringItAllTogetherHOC = (props) => {
 const enhance = compose(
   withApiCall,
   withNetworkStatus,
+  PureComponent(),
 );
 
 export default enhance(BringItAllTogetherHOC);

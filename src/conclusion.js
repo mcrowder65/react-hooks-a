@@ -13,7 +13,9 @@ const Conclusion = () => {
         style={{ width: 1, height: 1 }}
         onClick={() => setDisplay(!display)}
       />
-      {display ? <img src={image} title="made at imgflip.com" /> : null}
+      {display ? (
+        <img src={image} alt="funny meme" title="made at imgflip.com" />
+      ) : null}
     </Container>
   );
 };

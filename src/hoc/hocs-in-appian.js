@@ -12,7 +12,12 @@ const HocsInAppian = () => {
           <Li>PureComponent</Li>
           <Li>InteractiveComponent</Li>
         </ul>
-        <Text>2/3 of these components are written incorrectly 🤔</Text>
+        <Text>
+          2/3 of these components are written incorrectly{" "}
+          <span role="img" aria-label="thinking-face">
+            🤔
+          </span>
+        </Text>
       </h1>
     </Container>
   );

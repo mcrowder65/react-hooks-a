@@ -1,10 +1,8 @@
 import React from "react";
-import compose from "lodash.compose";
-import { withStyles } from "@material-ui/core/styles";
 import { Li } from "./reusable/li";
 import { Container } from "./reusable/container";
 
-function AgendaAndGoals() {
+const AgendaAndGoals = () => {
   return (
     <Container>
       <h1 style={{ fontWeight: "normal" }}>
@@ -29,9 +27,6 @@ function AgendaAndGoals() {
       </h1>
     </Container>
   );
-}
+};
 
-const styles = {};
-
-const enhance = compose(withStyles(styles));
-export default enhance(AgendaAndGoals);
+export default AgendaAndGoals;
