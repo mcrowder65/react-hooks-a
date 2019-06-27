@@ -8,28 +8,28 @@ import { Text } from "../reusable/text";
 
 const BringingItAllTogetherRenderProps = () => {
   return (
-    <NetworkStatus>
-      {({ networkStatus }) => {
+    <NetworkStatus
+      children={(extraProps) => {
         return (
-          <ApiCall>
-            {({ isLoading, makeApiCall }) => {
+          <ApiCall
+            children={(moreExtraProps) => {
               const apiCall = () =>
-                makeApiCall(async () => {
+                moreExtraProps.makeApiCall(async () => {
                   await sleep(1000);
                 });
               return (
                 <Container>
-                  {isLoading && <Text>loading</Text>}
-                  {networkStatus === "online" && (
+                  {moreExtraProps.isLoading && <Text>loading</Text>}
+                  {extraProps.networkStatus === "online" && (
                     <Button onClick={apiCall}>Make api call!</Button>
                   )}
                 </Container>
               );
             }}
-          </ApiCall>
+          />
         );
       }}
-    </NetworkStatus>
+    />
   );
 };
 
