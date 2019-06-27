@@ -5,7 +5,7 @@ import { Text } from "../reusable/text";
 
 const HocsInAppian = () => {
   return (
-    <Container>
+    <Container justifyContent="flex-start">
       <h1 style={{ fontWeight: "normal" }}>
         <ul>
           <Li>SkinnableComponent</Li>

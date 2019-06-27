@@ -1,13 +1,17 @@
 import React from "react";
 import { theme } from "./theme";
 
-export const Container = ({ children, flexDirection = "row" }) => {
+export const Container = ({
+  children,
+  flexDirection = "row",
+  justifyContent = theme.containerAlignItems,
+}) => {
   return (
     <div
       style={{
         display: "flex",
         flexDirection,
-        justifyContent: theme.containerJustifyContent,
+        justifyContent,
         alignItems: theme.containerAlignItems,
       }}
     >
