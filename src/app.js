@@ -124,7 +124,7 @@ const routes = [
       },
       {
         path: "/times-two-use-effect",
-        humanReadableName: "useEffect times two!",
+        humanReadableName: "count even number occurrences",
         component: UseEffectExampleTimesTwo,
       },
     ],
