@@ -3,7 +3,7 @@ import { Container } from "../reusable/container";
 import { Text } from "../reusable/text";
 
 export const useNetworkStatus = () => {
-  return "implement me!";
+  return { networkStatus: "implement me!" };
 };
 
 const NetworkStatusHooks = () => {
