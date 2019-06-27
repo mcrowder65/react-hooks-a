@@ -8,7 +8,7 @@ const UseStateExample = () => {
 
   return (
     <Container>
-      <Button onClick={() => setCount(count - 1)}>-1</Button>
+      <Button onClick={() => setCount((state) => state - 1)}>-1</Button>
       <div style={{ margin: 50 }}>
         <BigText>{count}</BigText>
       </div>

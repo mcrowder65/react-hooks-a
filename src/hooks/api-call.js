@@ -4,7 +4,16 @@ import { Button } from "../reusable/button";
 import { Container } from "../reusable/container";
 import { Text } from "../reusable/text";
 export const useApiCall = (yourApiCall) => {
-  return { isLoading: false };
+  const [isLoading, setIsLoading] = React.useState(false);
+  const makeApiCall = async () => {
+    try {
+      setIsLoading(true);
+      await yourApiCall();
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  return { isLoading, makeApiCall };
 };
 
 const ApiCallHooks = () => {

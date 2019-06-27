@@ -28,15 +28,15 @@ export class NetworkStatus extends React.Component {
 
 const NetworkStatusRenderProps = () => {
   return (
-    <NetworkStatus
-      children={(extraProps) => {
+    <NetworkStatus>
+      {(extraProps) => {
         return (
           <Container>
             <Text>Network status: {extraProps.networkStatus}</Text>
           </Container>
         );
       }}
-    />
+    </NetworkStatus>
   );
 };
 
