@@ -13,6 +13,12 @@ const Conclusion = () => {
         style={{ width: 1, height: 1 }}
         onClick={() => setDisplay(!display)}
       />
+      <Text fontSize={20}>
+        Code available at{" "}
+        <a href="https://github.com/mcrowder65/react-hooks-a">
+          https://github.com/mcrowder65/react-hooks-a
+        </a>
+      </Text>
       {display ? (
         <img src={image} alt="funny meme" title="made at imgflip.com" />
       ) : null}
