@@ -1,10 +1,17 @@
 import React from "react";
 import { Li } from "./reusable/li";
 import { Container } from "./reusable/container";
+import { Text } from "./reusable/text";
 
 const AboutMe = () => {
   return (
-    <Container>
+    <Container flexDirection="column">
+      <Text fontSize={20}>
+        Code available at{" "}
+        <a href="https://github.com/mcrowder65/react-hooks-a">
+          https://github.com/mcrowder65/react-hooks-a
+        </a>
+      </Text>
       <h1 style={{ fontWeight: "normal" }}>
         <ul>
           <Li>I am Matt Crowder</Li>
