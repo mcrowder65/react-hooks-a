@@ -2,15 +2,15 @@ import React from "react";
 import { Container } from "../reusable/container";
 import { Text } from "../reusable/text";
 
-const DisplayChildren = (props) => {
+const Inner = (props) => {
   return <Text>{props.children}</Text>;
 };
-const Children = () => {
+const Outer = () => {
   return (
     <Container>
-      <DisplayChildren>These are my children!</DisplayChildren>
+      <Inner>These are my children!</Inner>
     </Container>
   );
 };
 
-export default Children;
+export default Outer;
