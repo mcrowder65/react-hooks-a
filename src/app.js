@@ -39,6 +39,7 @@ import ApiCallHooks from "./hooks/api-call";
 import BringingItAllTogetherHooks from "./hooks/bringing-it-all-together";
 import Conclusion from "./conclusion";
 import Children from "./render-props/children";
+import AdditionalResources from "./more-links";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", humanReadableName: "About me", component: AboutMe },
@@ -159,6 +160,11 @@ const routes = [
     path: "/conclusion",
     humanReadableName: "Conclusion",
     component: Conclusion,
+  },
+  {
+    path: "/additional-readings",
+    humanReadableName: "Additional Links",
+    component: AdditionalResources,
   },
 ];
 const RouterWithoutHOC = (props) => {
